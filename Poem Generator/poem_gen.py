@@ -4,7 +4,6 @@ import openai
 import streamlit as st
 
 
-
 # Define the prompt template
 def generate_poem(theme):
     response = openai.ChatCompletion.create(
