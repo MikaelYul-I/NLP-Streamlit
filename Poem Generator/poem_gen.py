@@ -3,6 +3,9 @@ import os
 import openai
 import streamlit as st
 
+# Set the OpenAI API key
+os.environ["OPENAI_API_KEY"] = "somekey"
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # Define the prompt template
 def generate_poem(theme):
