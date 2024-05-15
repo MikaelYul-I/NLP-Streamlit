@@ -1,12 +1,14 @@
 import os
+
 import openai
 import streamlit as st
+
 
 
 # Define the prompt template
 def generate_poem(theme):
     response = openai.ChatCompletion.create(
-        model="babbage-002",
+        model="gpt-3.5-turbo",
         messages=[
             {"role": "system", "content": "You are a poet."},
             {"role": "user", "content": f"Write a poem about {theme}"},
