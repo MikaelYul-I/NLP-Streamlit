@@ -1,11 +1,6 @@
 import os
-
 import openai
 import streamlit as st
-
-# Set the OpenAI API key
-os.environ["OPENAI_API_KEY"] = "somekey"
-openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # Define the prompt template
 def generate_poem(theme):
@@ -27,7 +22,16 @@ def chain_prompts(initial_theme):
     refined_output = generate_poem(refined_prompt)
     return refined_output
 
-# Streamlit app
+# Initialize the sidebar for API key entry
+st.sidebar.title("Settings")
+api_key = st.sidebar.text_input("Enter OpenAI API Key", type="password")
+os.environ["OPENAI_API_KEY"] = api_key
+openai.api_key = os.getenv("OPENAI_API_KEY")
+
+# Additional sidebar options
+# Here you can add more inputs or settings that are relevant to your application
+
+# Streamlit app main area
 st.title("Poetry Generator")
 theme = st.text_input("Enter a theme or prompt for your poem:")
 
