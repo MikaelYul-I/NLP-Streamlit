@@ -13,6 +13,9 @@ conda create -env nlp
 conda activate nlp
 pip install streamlit openai==0.28
 
+## API OpenAI Key Configuration
+Before running the application, you need to set up your OpenAI API key. Replace your-api-key with your actual OpenAI API key in the .env file or export it as an environment variable:
+
 ## Run the apps
 1. Go to the directory
 2. Open terminal
